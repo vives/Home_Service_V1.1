@@ -12,9 +12,6 @@ import {
 } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { login } from "./../actions/authActions";
-import RegisterModal from "./auth/RegisterModal";
-import LoginModal from "./auth/LoginModal";
 import Logout from "./auth/Logout";
 
 class AppNavbar extends Component {
@@ -22,8 +19,7 @@ class AppNavbar extends Component {
     isOpen: false
   };
   static propTypes = {
-    auth: PropTypes.object.isRequired,
-    token: PropTypes.object.isRequired
+    auth: PropTypes.object.isRequired
   };
   toggle = () => {
     this.setState({
@@ -32,9 +28,12 @@ class AppNavbar extends Component {
   };
 
   render() {
-    const { isAuthenticated, user } = this.props.auth;
+    const { isAuthenticated, user, token } = this.props.auth;
+    //const token = localStorage.getItem("token");
     //  const token = localStorage.getItem("token");
+    //const tokenExit;
 
+    console.log(token);
     const authLinks = (
       <ul className="nav navbar-nav navbar-right">
         <li>
@@ -47,9 +46,12 @@ class AppNavbar extends Component {
           <Link to="Contact">Contact</Link>
         </li>
         <li>
+          <Link to="Admin">Admin</Link>
+        </li>
+        <li>
           <Logout />
         </li>
-        <li>{user ? `Welcome ${user.name}` : ""}</li>
+        <li style={{ color: "green" }}>{user ? `Welcome ${user.name}` : ""}</li>
       </ul>
     );
 
@@ -69,6 +71,9 @@ class AppNavbar extends Component {
         </li>
         <li>
           <Link to="Register">Register</Link>
+        </li>
+        <li>
+          <Link to="MakeAppointment">MakeAppointment</Link>
         </li>
       </ul>
     );
@@ -108,7 +113,8 @@ class AppNavbar extends Component {
   }
 }
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  token: localStorage.getItem("token")
 });
 export default connect(
   mapStateToProps,

@@ -1,18 +1,5 @@
 import React, { Component } from "react";
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  Form,
-  FormGroup,
-  Input,
-  NavLink,
-  Alert,
-  Col,
-  Row,
-  Label
-} from "reactstrap";
+import { Form, FormGroup, Input } from "reactstrap";
 
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -56,8 +43,8 @@ class Register extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
   passwordval() {
-    // console.log(this.state.password);
-    console.log(localStorage.getItem("token"));
+    ///console.log(this.state.password);
+    //console.log(localStorage.getItem("token"));
     if (this.state.password !== this.state.password_conf) {
       this.setState({ msg: "Password does not match" });
       return false;

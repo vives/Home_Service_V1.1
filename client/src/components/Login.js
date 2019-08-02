@@ -11,7 +11,6 @@ class Login extends Component {
     email: "",
     password: "",
     msg: null
-    //token: ""
   };
 
   static ProprTypes = {
@@ -30,10 +29,11 @@ class Login extends Component {
         this.setState({ msg: null });
       }
     }
+
     if (isAuthenticated) {
       this.props.history.push("/");
     }
-    console.log(localStorage.getItem("token"));
+  //  console.log(localStorage.getItem("token"));
   }
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });

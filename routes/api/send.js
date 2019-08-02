@@ -40,7 +40,7 @@ router.post("/", (req, res) => {
     res.json({
       Info: {
         name: sendMessage.name,
-        emil: sendMessage.email,
+        email: sendMessage.email,
         message: sendMessage.message
       }
     })

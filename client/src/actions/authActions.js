@@ -1,6 +1,7 @@
 import axios from "axios";
 import {
   USER_LOADING,
+  GET_USERS,
   USER_LOADED,
   AUTH_ERROR,
   LOGIN_SUCCESS,

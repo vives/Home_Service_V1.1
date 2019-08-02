@@ -58,4 +58,22 @@ router.get("/user", auth, (req, res) => {
     .then(user => res.json(user));
 });
 
+// @route  GET api/auth/allUser
+// @desc   GET user data
+// @access Private
+router.get("/allUser", auth, (req, res) => {
+  User.find()
+    .sort({ date: -1 })
+    .then(users => res.json(users));
+});
+
+// @route  DELETE api/auth/:id
+// @desc   Delete a User
+// @access Private
+router.delete("/:id", (req, res) => {
+  User.findById(req.params.id)
+    .then(users => users.remove().then(() => res.json({ success: true })))
+    .catch(err => res.status(404).json({ success: false }));
+});
+
 module.exports = router;
