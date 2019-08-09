@@ -30,11 +30,6 @@
     "node": "10.15.3"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/preset-react": "^7.0.0",
-    "nodemon": "^1.19.1",
-    "babel-minify-webpack-plugin": "^0.2.0",
-    "babel-plugin-transform-class-properties": "^6.24.1"
+    "nodemon": "^1.19.1"
   }
 }
