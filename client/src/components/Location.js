@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import GoogleMapReact from "google-map-react";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
-const API_KEY = "AIzaSyAb5-n_7-yCcD-0Dm32rX-Nsv63V6m0LIc";
+const API_KEY = "XXXXXXX";
 class Location extends Component {
   static defaultProps = {
     center: {
@@ -14,7 +14,7 @@ class Location extends Component {
     return (
       <div className="container" style={{ height: "100vh", width: "100%" }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: "AIzaSyAb5-n_7-yCcD-0Dm32rX-Nsv63V6m0LIc" }}
+          bootstrapURLKeys={{ key: "XXXXXXX" }}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
